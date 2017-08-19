@@ -6,15 +6,20 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="..\styles\css\main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="bundle.js"></script>
+    <script src="jquery.scrollify.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../src/less/index.js"></script>
 </head>
 <body id="home_page_body">
+<section>
     <div class="home_page_background">
         <div class="dark_background">
             <nav class="navbar navbar-fixed-top">
@@ -22,7 +27,6 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
                             <li><a href="#about">About Us</a></li>
-                            <li><a href="#location">Location</a></li>
                             <li><a href="../login.html">Sign In</a></li>
                             <li><a href="../register.html">Sign Up</a></li>
                         </ul>
@@ -37,31 +41,107 @@
             </div>
         </div>
     </div>
-    <div id="about" style="height: 1000px;">
-        <h1>About Us</h1>
-        <hr>
+</section>
+<section>
+    <div id="about">
         <div class="berries row">
-            <div class="berry_01 col-xs-2 col-xs-offset-3">
-                <img src="../images/raspberry_retouched.png" />
+            <div class="col-xs-2 col-xs-offset-5">
+                <h1>About Us</h1>
             </div>
             <div class="berry_02 col-xs-2">
-                <img src="../images/blueberry_retouched.png" />
-            </div>
-            <div class="berry_03 col-xs-2">
-                <img src="../images/mosh_retouched.png" />
+                <img src="../images/avocado_lying.png" />
             </div>
         </div>
+        <hr>
         <div class="about_content row">
             <div class="about_text col-md-4 col-md-offset-2">
-                <p>Lorem   Oh girl, I can’t even handle you right now. Your photography is making me doubt everything I know to be true and good and right! Seriously, though, how do you divine such shadowy, moody depths and rich, deep tones? Do your partners know you’re leaving them to be a full-time food photographer/recipe developer yet? (Just kidding, Partners, if you’re reading.. this is but my weak attempt at a genuine compliment.. she’s not leaving. Please do not fire her.)
-
-                    What I love about the recipe is its gorgeous combination of authentic Korean ingredients and like.. hot dogs. Reminds me of the goodness Lady & Pups is always whipping up. Nom!</p>
+                <p>
+                    Since time immemorial, Food has been the center of human existence, as well as a creative way of expressing oneself. So they formed the simplest culinary recipes, that developed over centuries, and turned into<strong><em>the art of cooking.</em></strong> <br> We are a small group of people who are united by love for the refined, infinitely different, and vitally important .. Love for food. The art of cooking continues to evolve and change, just like we - humans, it evolves. We think, such an experience should be preserved. <strong>Our website is a real well of culinary art. We welcome the openness of recipes, contacting the amateur cooks with each other, who would like to share their recipes, and discuss them with other fans of the genre.</strong><br>So if you are interested,<strong> Welcome To The Club.!</strong></p>
+                <div>
+                    <a href="../login.html">Sign In</a>
+                    <a href="../register.html">Sign Up</a>
+                </div>
             </div>
             <div class="about_img col-md-4">
-                <img src="../images/about_gif.gif" />
+                <img src="../images/giphy.gif" />
             </div>
         </div>
+        <hr>
+        <div class="about_carousel">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
 
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="../images/slider_04.gif" alt="Los Angeles">
+                    </div>
+
+                    <div class="item">
+                        <img src="../images/slider_05.jpg" alt="Chicago">
+                    </div>
+
+                    <div class="item">
+                        <img src="../images/slider_06.jpg" alt="New York">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div><!--End of div#about-->
+</section>
+<hr>
+    <div class="footer">
+        <div class="row">
+            <div class="blog_subscription col-md-4 col-md-offset-4">
+                <div class="subscr_wrapper text-center">
+                    <h4 class="subscr_title">Subscribe To Our Newsletter.!</h4>
+                    <form action="#" method="post" accept-charset="utf-8">
+                        <p id="subscribe-email">
+                            <input type="email" name="email" required="required" class="subscribe_email" value=""  placeholder="email address">
+                        </p>
+                        <p id="subscribe-submit">
+                            <input type="submit" value="Subscribe!" name="subscriptions_submit">
+                        </p>
+                    </form>
+                    <div class="social_widgets_wrapper">
+                        <a href="https://www.facebook.com" onclick="javascript:window.open('http://facebook.com'); return false;">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" onclick="javascript:window.open('https://www.instagram.com/'); return false;">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.pinterest.com/" onclick="javascript:window.open('https://www.pinterest.com/'); return false;">
+                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com/" onclick="javascript:window.open('https://twitter.com/'); return false;">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://plus.google.com/" onclick="javascript:window.open('https://plus.google.com/'); return false;">
+                            <i class="fa fa-google-plus" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright_wrapper">
+            <p>&copy; 2017 LLL Loves Music. All Rights Reserved.</p>
+        </div>
     </div>
 </body>
 </html>
