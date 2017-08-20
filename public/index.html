@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Montserrat|Raleway:400,600|Sorts+Mill+Goudy|Yesteryear" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="..\styles\css\main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="..\styles\css\main.css" />
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="jquery.scrollify.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="../jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="../src/less/index.js"></script>
+    <style>
+        #ui-datepicker-div {
+            left: 616.781px !important;
+        }
+    </style>
 </head>
 <body id="home_page_body">
 <section>
-    <div class="home_page_background">
+    <div class="home_page_background" id="top">
         <div class="dark_background">
             <nav class="navbar navbar-fixed-top">
                 <div class="container-fluid">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="../login.html">Sign In</a></li>
-                            <li><a href="../register.html">Sign Up</a></li>
+                            <li class="active"><a href="#" id="my_link_home">Home<span class="sr-only">(current)</span></a></li>
+                            <li><a href="#" id="my_link_about">About Us</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#loginModal" onclick="javascript:return false;">Sign In</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#registerModal" onclick="javascript:return false;">Sign Up</a></li>
                         </ul>
                 </div><!-- /.container-fluid -->
             </nav>
@@ -37,7 +41,7 @@
                 <h4>A taste of local ingredients & <br>
                 seasonal flavours</h4>
                 <p>Leave Your Own Recipes..</p>
-                <a href="../login.html">Sign In</a>
+                <a href="#" data-toggle="modal" data-target="#loginModal" onclick="javascript:return false;">Sign In</a>
             </div>
         </div>
     </div>
@@ -58,8 +62,8 @@
                 <p>
                     Since time immemorial, Food has been the center of human existence, as well as a creative way of expressing oneself. So they formed the simplest culinary recipes, that developed over centuries, and turned into<strong><em>the art of cooking.</em></strong> <br> We are a small group of people who are united by love for the refined, infinitely different, and vitally important .. Love for food. The art of cooking continues to evolve and change, just like we - humans, it evolves. We think, such an experience should be preserved. <strong>Our website is a real well of culinary art. We welcome the openness of recipes, contacting the amateur cooks with each other, who would like to share their recipes, and discuss them with other fans of the genre.</strong><br>So if you are interested,<strong> Welcome To The Club.!</strong></p>
                 <div>
-                    <a href="../login.html">Sign In</a>
-                    <a href="../register.html">Sign Up</a>
+                    <a href="#" data-toggle="modal" data-target="#loginModal" onclick="javascript:return false;">Sign In</a>
+                    <a href="#" data-toggle="modal" data-target="#registerModal" onclick="javascript:return false;">Sign Up</a>
                 </div>
             </div>
             <div class="about_img col-md-4">
@@ -104,44 +108,172 @@
         </div>
     </div><!--End of div#about-->
 </section>
-<hr>
-    <div class="footer">
-        <div class="row">
-            <div class="blog_subscription col-md-4 col-md-offset-4">
-                <div class="subscr_wrapper text-center">
-                    <h4 class="subscr_title">Subscribe To Our Newsletter.!</h4>
-                    <form action="#" method="post" accept-charset="utf-8">
-                        <p id="subscribe-email">
-                            <input type="email" name="email" required="required" class="subscribe_email" value=""  placeholder="email address">
-                        </p>
-                        <p id="subscribe-submit">
-                            <input type="submit" value="Subscribe!" name="subscriptions_submit">
-                        </p>
-                    </form>
-                    <div class="social_widgets_wrapper">
-                        <a href="https://www.facebook.com" onclick="javascript:window.open('http://facebook.com'); return false;">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.instagram.com/" onclick="javascript:window.open('https://www.instagram.com/'); return false;">
-                            <i class="fa fa-instagram" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.pinterest.com/" onclick="javascript:window.open('https://www.pinterest.com/'); return false;">
-                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://twitter.com/" onclick="javascript:window.open('https://twitter.com/'); return false;">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://plus.google.com/" onclick="javascript:window.open('https://plus.google.com/'); return false;">
-                            <i class="fa fa-google-plus" aria-hidden="true"></i>
-                        </a>
-                    </div>
+<div class="footer">
+    <div class="row">
+        <div class="blog_subscription col-md-4 col-md-offset-4">
+            <div class="subscr_wrapper text-center">
+                <h4 class="subscr_title">Subscribe To Our Newsletter.!</h4>
+                <form action="#" method="post" accept-charset="utf-8">
+                    <p id="subscribe-email">
+                        <input type="email" name="email" required="required" class="subscribe_email" value=""  placeholder="email address">
+                    </p>
+                    <p id="subscribe-submit">
+                        <input type="submit" value="Subscribe!" name="subscriptions_submit">
+                    </p>
+                </form>
+                <div class="social_widgets_wrapper">
+                    <a href="https://www.facebook.com" onclick="javascript:window.open('http://facebook.com'); return false;">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" onclick="javascript:window.open('https://www.instagram.com/'); return false;">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/" onclick="javascript:window.open('https://www.pinterest.com/'); return false;">
+                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://twitter.com/" onclick="javascript:window.open('https://twitter.com/'); return false;">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://plus.google.com/" onclick="javascript:window.open('https://plus.google.com/'); return false;">
+                        <i class="fa fa-google-plus" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </div>
-        <hr>
-        <div class="copyright_wrapper">
-            <p>&copy; 2017 LLL Loves Music. All Rights Reserved.</p>
+    </div>
+    <hr>
+    <div class="copyright_wrapper">
+        <p>&copy; 2017 LLL Loves Music. All Rights Reserved.</p>
+    </div>
+</div>
+
+
+<!-- Modal_LOGIN -->
+<div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="sign_in">Please Sign In</h2>
+            </div>
+            <hr style="margin-top: 0; border-top: 1px solid #c9c9c9">
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control form_inputs" id="email" placeholder="Email Address">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form_inputs" id="pwd" placeholder="Password">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                    <div title="squaredOne" style="height: 5px !important;">
+                        <!-- .squaredOne -->
+                        <div class="squaredOne">
+                            <input type="checkbox" value="None" id="squaredOne" name="check" checked />
+                            <label for="squaredOne"></label>
+                            <p class="checkbox_lbl">Remember Me</p>
+                        </div>
+                        <!-- end .squaredOne -->
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign In</button>
+                </form>
+                <div class="links_cont">
+                    <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal" onclick="javascript:return false;">Register</a>
+                    <a href="#" data-toggle="modal" data-target="#forgotModal" data-dismiss="modal" onclick="javascript:return false;">Forgot Your Password?</a>
+                </div>
+            </div>
+
         </div>
     </div>
+</div>
+
+
+<!-- Modal_Registration-->
+<div class="modal fade" id="registerModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="sign_in">Please Sign Up</h2>
+            </div>
+            <hr style="margin-top: 0; border-top: 1px solid #c9c9c9">
+            <div class="modal-body register_cont">
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control form_inputs" id="username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control form_inputs" id="email" placeholder="Email Address">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="gender_cont_wrapper">
+                                <form>
+                                    <label class="radio-inline" style="padding-left: 10px">
+                                        Gender
+                                    </label>
+                                    <label class="radio-inline" style="margin-left: 30px">
+                                        <input type="radio" name="optradio">Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="optradio">Female
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div id="date2" class="data_wrapper">
+                                <label class="radio-inline" style="padding-left: 10px">
+                                    Date Of Birth
+                                </label>
+                                <input type="text" id="datepicker">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form_inputs" id="pwd" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control form_inputs" id="pwd_confirm" placeholder="Confirm Password">
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign Up</button>
+                </form>
+                <div class="links_cont register_links_cont">
+                    <a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal" onclick="javascript:return false;">Sign In</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal_Forgot_Password -->
+<div class="modal fade" id="forgotModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="sign_in">Please Enter Your Email Address</h2>
+            </div>
+            <hr style="margin-top: 0; border-top: 1px solid #c9c9c9">
+            <div class="modal-body">
+                <form>
+                    <div class="form-group col-">
+                        <input type="email" class="form-control form_inputs" id="email" placeholder="Email Address">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <button type="submit" class="btn btn-default" style="margin-top: 0">Submit</button>
+                </form>
+                <div class="links_cont">
+                    <a href="#" data-toggle="modal" data-target="#loginModal" data-dismiss="modal" onclick="javascript:return false;">Sign In</a>
+                    <a href="#" data-toggle="modal" data-target="#registerModal" data-dismiss="modal" onclick="javascript:return false;">Register</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 </body>
 </html>
